@@ -96,7 +96,7 @@ jobs:
         arch: [x64]
         cublas: [ON]
         sdl2: [ON]
-        cuda-toolkit: [12.4.0, 11.8.0]
+        cuda-toolkit: [12.4.0, 11.8.0, 13.1]
         include:
           - arch: x64
             sdl2: ON
@@ -230,8 +230,8 @@ jobs:
           echo "CUDA_PATH=$CUDA_TOOLKIT_DIR" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
           echo "CUDA_PATH_V12_2=$CUDA_TOOLKIT_DIR" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
 
-      - name: Install Cuda Toolkit 13.0
-        if: ${{ matrix.cuda-toolkit == '13.0' }}
+      - name: Install Cuda Toolkit 13.1
+        if: ${{ matrix.cuda-toolkit == '13.1' }}
         run: |
           $CUDA_VERSION = ${{ matrix.cuda-toolkit }}
           $CUDA_TOOLKIT_DIR = "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v$CUDA_VERSION"
