@@ -121,7 +121,7 @@ jobs:
           evict-old-files: 5d
 
       - name: Install CUDA Toolkit ${{ matrix.cuda-version }}
-        uses: Jimver/cuda-toolkit@v0.2.15
+        uses: Jimver/cuda-toolkit@v0.2.35
         with:
           cuda: ${{ matrix.cuda-full }}
           method: 'network'   # یا 'local' اگر مشکل دانلود داشت
